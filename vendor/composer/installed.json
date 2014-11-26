@@ -848,9 +848,7 @@
         "time": "2014-06-04 14:43:02",
         "type": "library",
         "extra": {
-            "branch-alias": [
-
-            ]
+            "branch-alias": []
         },
         "installation-source": "dist",
         "autoload": {
@@ -921,6 +919,44 @@
         "keywords": [
             "Fixture",
             "faker",
+            "yii2"
+        ]
+    },
+    {
+        "name": "letyii/yii2-tinymce",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/letyii/yii2-tinymce.git",
+            "reference": "75a7a500ae2e7e3787f5621bd1aeed7d23540890"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/letyii/yii2-tinymce/zipball/75a7a500ae2e7e3787f5621bd1aeed7d23540890",
+            "reference": "75a7a500ae2e7e3787f5621bd1aeed7d23540890",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2014-05-18 14:45:10",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "letyii\\tinymce\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "TinyMce for yii2 textarea",
+        "homepage": "https://github.com/letyii/yii2-tinymce",
+        "keywords": [
+            "tinymce",
             "yii2"
         ]
     }

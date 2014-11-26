@@ -14,5 +14,6 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'letyii\\tinymce\\' => array($vendorDir . '/letyii/yii2-tinymce'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
 );

@@ -153,8 +153,11 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $username
      * @return static|null
      */
-    public static function findByUsername($username)
+    public static function findByUsername($username, $isAdmin=false)
     {
+        if($isAdmin){
+            return static::findOne(['username' => $username, 'status' => self::STATUS_ENABLE, 'role_id' => 1]);
+        }
         return static::findOne(['username' => $username, 'status' => self::STATUS_ENABLE]);
     }
 
