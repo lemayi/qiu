@@ -98,14 +98,6 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @inheritdoc
      */
-    public function attributes()
-    {
-        return array_merge(array_keys(static::getTableSchema()->columns), ['password']);
-    }
-
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
@@ -134,8 +126,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios['create'] = ['role_id','username','password_hash','email','mobile','email_bind','mobile_bind','status'];
-        $scenarios['update'] = ['role_id','username','password_hash','email','mobile','email_bind','mobile_bind','status'];
+        $scenarios['create'] = ['role_id','username','password','email','mobile','email_bind','mobile_bind','status'];
+        $scenarios['update'] = ['role_id','username','password','email','mobile','email_bind','mobile_bind','status'];
         return $scenarios;
     }
 
