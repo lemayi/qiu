@@ -37,7 +37,7 @@ class Role extends ActiveRecord
             [['name'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['name'], 'string', 'max' => 20],
-            [['name'], 'unique']
+            [['name'], 'unique'],
             [['status'], 'default', 'value' => self::STATUS_ENABLE],
             [['status'], 'in', 'range' => [self::STATUS_ENABLE, self::STATUS_DISABLE]],
         ];

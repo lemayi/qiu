@@ -17,7 +17,7 @@ use backend\models\Role;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'password_hash')->passwordInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'password')->passwordInput(['maxlength' => 50]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 
