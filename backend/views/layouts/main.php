@@ -39,6 +39,11 @@ AppAsset::register($this);
             } else {
                 $menuItems[] = ['label' => '会员', 'url' => ['/user']];
                 $menuItems[] = ['label' => '会员组', 'url' => ['/role']];
+                $menuItems[] = ['label' => '联赛', 'url' => ['/league']];
+                $menuItems[] = ['label' => '赛季', 'url' => ['/season']];
+                $menuItems[] = ['label' => '球队', 'url' => ['/team']];
+                $menuItems[] = ['label' => '球员', 'url' => ['/player']];
+                $menuItems[] = ['label' => '比赛', 'url' => ['/game']];
                 $menuItems[] = [
                     'label' => '注销 (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
