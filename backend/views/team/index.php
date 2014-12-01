@@ -7,23 +7,19 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\TeamSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Teams';
+$this->title = '球队';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="team-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Team', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增球队', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'name',
@@ -34,7 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_at',
             // 'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute'=>'created_at', 
+                'format'=>['date', 'php:Y-m-d H:i:s'],
+            ],
+            [
+                'attribute'=>'updated_at', 
+                'format'=>['date', 'php:Y-m-d H:i:s'],
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'headerOptions' => ['width' => '7%'],
+            ],
         ],
     ]); ?>
 
