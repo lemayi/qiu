@@ -7,37 +7,55 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\LinkSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Links';
+$this->title = '帖子';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="link-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Link', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增帖子', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'league_id',
-            'team_id',
-            'player_id',
-            'type_id',
-            // 'title',
-            // 'intro',
-            // 'image',
-            // 'status',
-            // 'created_at',
-            // 'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            'title',
+            [
+                'attribute' => 'type_id',
+                'format' => 'html',
+                'value'=>function ($model) {
+                            if(1 == $model->type_id){
+                                return Html::tag('span', '链接', ['class' => 'label label-success glyphicon']);
+                            }
+                            if(2 == $model->type_id){
+                                return Html::tag('span', '文字', ['class' => 'label label-danger glyphicon']);
+                            }
+                            if(3 == $model->type_id){
+                                return Html::tag('span', '图片', ['class' => 'label label-danger glyphicon']);
+                            }
+                        },
+                'filter'=> ['1' => '链接', '2' => '文字', '3' => '图片'],
+            ],
+            [
+                'attribute' => 'status',
+                'format' => 'html',
+                'value'=>function ($model) {
+                            if(1 == $model->status){
+                                return Html::tag('span', ' ', ['class' => 'label label-success glyphicon glyphicon-ok']);
+                                // return '<span class="glyphicon glyphicon-ok"></span>';
+                            }else if(2 == $model->status){
+                                return Html::tag('span', ' ', ['class' => 'label label-danger glyphicon glyphicon-remove']);
+                            }
+                        },
+                'filter'=> ['1' => '启用', '2' => '禁用'],
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'headerOptions' => ['width' => '7%'],
+            ],
         ],
     ]); ?>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace backend\models;
 
 use Yii;
 use yii\base\Model;
@@ -19,7 +19,7 @@ class LinkSearch extends Link
     {
         return [
             [['id', 'league_id', 'team_id', 'player_id', 'type_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'intro', 'image'], 'safe'],
+            [['title', 'intro'], 'safe'],
         ];
     }
 
@@ -63,8 +63,7 @@ class LinkSearch extends Link
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'intro', $this->intro])
-            ->andFilterWhere(['like', 'image', $this->image]);
+            ->andFilterWhere(['like', 'intro', $this->intro]);
 
         return $dataProvider;
     }

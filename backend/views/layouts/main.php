@@ -44,6 +44,7 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => '球队', 'url' => ['/team']];
                 $menuItems[] = ['label' => '球员', 'url' => ['/player']];
                 $menuItems[] = ['label' => '比赛', 'url' => ['/game']];
+                $menuItems[] = ['label' => '帖子', 'url' => ['/link']];
                 $menuItems[] = [
                     'label' => '注销 (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],

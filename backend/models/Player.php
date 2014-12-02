@@ -3,7 +3,8 @@
 namespace backend\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
+use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "player".
  *
@@ -16,6 +17,9 @@ use Yii;
  */
 class Player extends \yii\db\ActiveRecord
 {
+    const STATUS_ENABLE      = 1;
+    const STATUS_DISABLE     = 2;
+
     /**
      * @inheritdoc
      */
@@ -44,11 +48,31 @@ class Player extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'image' => 'Image',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'name' => '球员名',
+            'image' => '缩略图',
+            'status' => '状态',
+            'created_at' => '创建日期',
+            'updated_at' => '更新日期',
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+
+    // status array
+    public function getStatusList()
+    {
+        return [
+            self::STATUS_ENABLE    => '启用',
+            self::STATUS_DISABLE   => '禁用'
         ];
     }
 }

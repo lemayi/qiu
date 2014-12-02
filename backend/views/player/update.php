@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Player */
 
-$this->title = 'Update Player: ' . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Players', 'url' => ['index']];
+$this->title = '编辑球员: ' . ' ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => '球员', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '编辑';
 ?>
 <div class="player-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

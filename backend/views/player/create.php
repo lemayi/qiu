@@ -6,13 +6,11 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Player */
 
-$this->title = 'Create Player';
-$this->params['breadcrumbs'][] = ['label' => 'Players', 'url' => ['index']];
+$this->title = '新增球员';
+$this->params['breadcrumbs'][] = ['label' => '球员', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="player-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

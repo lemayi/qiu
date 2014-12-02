@@ -7,16 +7,13 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PlayerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Players';
+$this->title = '球员';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="player-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Player', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增球员', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -28,11 +25,31 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'image',
-            'status',
-            'created_at',
-            // 'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute' => 'status',
+                'format' => 'html',
+                'value'=>function ($model) {
+                            if(1 == $model->status){
+                                return Html::tag('span', ' ', ['class' => 'label label-success glyphicon glyphicon-ok']);
+                                // return '<span class="glyphicon glyphicon-ok"></span>';
+                            }else if(2 == $model->status){
+                                return Html::tag('span', ' ', ['class' => 'label label-danger glyphicon glyphicon-remove']);
+                            }
+                        },
+                'filter'=> ['1' => '启用', '2' => '禁用'],
+            ],
+            [
+                'attribute'=>'created_at', 
+                'format'=>['date', 'php:Y-m-d H:i:s'],
+            ],
+            [
+                'attribute'=>'updated_at', 
+                'format'=>['date', 'php:Y-m-d H:i:s'],
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'headerOptions' => ['width' => '7%'],
+            ],
         ],
     ]); ?>
 

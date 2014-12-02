@@ -37,9 +37,7 @@ class Team extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'image', 'seo_title', 'seo_keyword', 'seo_desc', 'created_at', 'updated_at'], 'required'],
             [['seo_desc'], 'string'],
-            [['created_at', 'updated_at'], 'integer'],
             [['name'], 'string', 'max' => 100],
             [['image', 'seo_title', 'seo_keyword'], 'string', 'max' => 255]
         ];

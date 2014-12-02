@@ -18,7 +18,8 @@ class GameSearch extends Game
     public function rules()
     {
         return [
-            [['id', 'league_id', 'home_team', 'visit_team', 'time', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['id', 'league_id', 'home_team', 'visit_team', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['time'], 'safe'],
         ];
     }
 

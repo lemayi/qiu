@@ -12,28 +12,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'league_id')->textInput() ?>
+    <?= $form->field($model, 'type_id')->dropDownList($model->getLinkTypeList()) ?>
 
-    <?= $form->field($model, 'team_id')->textInput() ?>
-
-    <?= $form->field($model, 'player_id')->textInput() ?>
-
-    <?= $form->field($model, 'type_id')->textInput() ?>
+    <?= $form->field($model, 'url')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'intro')->textInput(['maxlength' => 255]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput(['maxlength' => 10]) ?>
-
-    <?= $form->field($model, 'updated_at')->textInput(['maxlength' => 10]) ?>
+    <?= $form->field($model, 'status')->dropDownList($model->getStatusList()) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '新增' : '编辑', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

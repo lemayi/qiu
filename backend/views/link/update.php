@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Update Link: ' . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Links', 'url' => ['index']];
+$this->title = '编辑帖子: ' . ' ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => '帖子', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = '编辑';
 ?>
 <div class="link-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,

@@ -9,6 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
+    'homeUrl' => 'http://www.qiu.com/',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
@@ -28,6 +29,10 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+    ],
+    'aliases' => [
+        // '@asset' => 'http://jinqiumi.qiniudn.com',
+        '@asset' => 'http://www.qiu.com',
     ],
     'params' => $params,
 ];

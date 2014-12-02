@@ -37,12 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         },
                 'filter'=> ['1' => '启用', '2' => '禁用'],
             ],
-            // 'seo_title',
-            // 'seo_keyword',
-            // 'seo_desc:ntext',
-            // 'created_at',
-            // 'updated_at',
-
             [
                 'attribute'=>'created_at', 
                 'format'=>['date', 'php:Y-m-d H:i:s'],
