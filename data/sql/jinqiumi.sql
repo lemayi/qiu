@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2014-12-01 17:48:06
+-- Generation Time: 2014-12-02 17:45:12
 -- 服务器版本： 5.5.36
 -- PHP Version: 5.4.25
 
@@ -31,12 +31,19 @@ CREATE TABLE IF NOT EXISTS `game` (
   `league_id` int(11) NOT NULL DEFAULT '0',
   `home_team` int(11) NOT NULL DEFAULT '0',
   `visit_team` int(11) NOT NULL DEFAULT '0',
-  `time` int(10) unsigned NOT NULL,
+  `time` datetime NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` int(10) unsigned NOT NULL,
   `updated_at` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `game`
+--
+
+INSERT INTO `game` (`id`, `league_id`, `home_team`, `visit_team`, `time`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, '2014-06-07 09:10:00', 1, 1417488858, 1417489068);
 
 -- --------------------------------------------------------
 
@@ -73,17 +80,40 @@ INSERT INTO `league` (`id`, `name`, `image`, `status`, `seo_title`, `seo_keyword
 CREATE TABLE IF NOT EXISTS `link` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `league_id` int(11) NOT NULL DEFAULT '0',
+  `season_id` int(11) NOT NULL DEFAULT '0',
   `team_id` int(11) NOT NULL DEFAULT '0',
   `player_id` int(11) NOT NULL DEFAULT '1',
   `type_id` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1：链接；2：文章；3：图片',
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `intro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` int(10) unsigned NOT NULL,
   `updated_at` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `link_image`
+--
+
+CREATE TABLE IF NOT EXISTS `link_image` (
+  `link_id` int(11) NOT NULL DEFAULT '0',
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `link_word`
+--
+
+CREATE TABLE IF NOT EXISTS `link_word` (
+  `link_id` int(11) NOT NULL DEFAULT '0',
+  `content` longtext COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -95,6 +125,24 @@ CREATE TABLE IF NOT EXISTS `player` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` int(10) unsigned NOT NULL,
+  `updated_at` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `reply`
+--
+
+CREATE TABLE IF NOT EXISTS `reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link_id` int(11) NOT NULL DEFAULT '0',
+  `level` tinyint(1) NOT NULL DEFAULT '1',
+  `author_id` int(11) NOT NULL DEFAULT '0',
+  `replyer_id` int(11) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` int(10) unsigned NOT NULL,
   `updated_at` int(10) unsigned NOT NULL,
@@ -163,7 +211,14 @@ CREATE TABLE IF NOT EXISTS `team` (
   `created_at` int(10) unsigned NOT NULL,
   `updated_at` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `team`
+--
+
+INSERT INTO `team` (`id`, `name`, `image`, `seo_title`, `seo_keyword`, `seo_desc`, `created_at`, `updated_at`) VALUES
+(1, '皇家马德里足球俱乐部', '', '', '', '', 1417484255, 1417484255);
 
 -- --------------------------------------------------------
 
@@ -200,7 +255,7 @@ INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_res
 (2, '蚂蚁', '', '$2y$13$Dr3ekPlNMXsIR0YhtFl5peRXiC5lUvAso30hQ3v2r/U5hu93d1xE2', NULL, '631782136@qq.com', '18602877234', 0, 0, 2, 1, 0, '', 0, 1416902853, 1416993951),
 (3, '姚夏的右脚', 'nfCzXA8HyjoBGzLDEugAZhziyBpQmROf', '$2y$13$jIimR89YCcexfz7hSqhAQuOizsFJ7mZTkjQyzGhfHtvVNqGexQW0G', NULL, '', '', 0, 0, 2, 1, 0, '', 0, 1416983418, 1416993793),
 (4, '伯纳乌', 'nfCzXA8HyjoBGzLDEugAZhziyBpQmROf', '$2y$13$0ptyC/A8ulcWJ6S.qYvbU.0FxUEvOB.wP1bMXipLUtw/v243TBXeu', NULL, '', '', 0, 0, 2, 1, 0, '', 0, 1416987019, 1416988757),
-(5, '花样撸管大赛管委会', 'NzTz6GQ1SEOlqa6VAmQ_yX6lJaJyo7cP', '$2y$13$hFijZ/Y6R458tZEmVY5YoO..t.VaTnX8QX.6mXjqmtCdtSo.HM7tm', NULL, '', '', 0, 0, 2, 1, 0, '', 0, 1416988046, 1416988046),
+(5, '花样撸管大赛管委会会长', 'NzTz6GQ1SEOlqa6VAmQ_yX6lJaJyo7cP', '$2y$13$hFijZ/Y6R458tZEmVY5YoO..t.VaTnX8QX.6mXjqmtCdtSo.HM7tm', NULL, '', '', 0, 0, 2, 1, 0, '', 0, 1416988046, 1417491214),
 (6, '村东那棵小杨树', 'Z2jQio2x3nxywtTqrltQYymtxGsFTvne', '$2y$13$YOx95CTeFD4pD1JchhpVFuNmJQzt2irHxEZqaBYiOIqfNSgHR1kK6', NULL, '', '', 0, 0, 2, 1, 0, '', 0, 1416988963, 1416989600);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
