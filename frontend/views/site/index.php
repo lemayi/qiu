@@ -8,79 +8,64 @@
     <link rel="icon" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
     <link rel="bookmark" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
-    <link href="<?= Yii::getAlias('@asset') ?>/css/index.css" type="text/css" rel="stylsheet">
+    <link href="<?= Yii::getAlias('@asset') ?>/css/index.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="head-band">
-        <div class="head-content">
-        <a class="digg-logo" href="<?= yii::$app->getHomeUrl() ?>"></a>
-                <!-- 导航 -->
-            <div class="action-menu">
-                                        
-                <a class="tb active" href="/all/hot/recent/1">全部</a>
-                                
-                
-                                    
-                    <a class="tb" href="/r/news/hot/1">42区</a>
-                    
-                
-                                    
-                    <a class="tb" href="/r/scoff/hot/1">段子</a>
-                    
-                
-                                    
-                    <a class="tb" href="/r/pic/hot/1">图片</a>
-                    
-                
-                                    
-                    <a class="tb" href="/r/tec/hot/1">挨踢1024</a>
-                    
-                
-                                    
-                    <a class="tb" href="/r/ask/hot/1">你问我答</a>
-                    
-                
-
-                <!-- <a href="/c/review/hot/1" class="tb" style="color:#ffcc33;">待创建</a> -->
-            
-                <!--
-                <a href="/r/news/hot/1" class="tb">资讯</a>
-                <a href="/r/scoff/hot/1" class="tb">段子</a>
-                <a href="/r/pic/hot/1" class="tb">图片</a>
-                <a href="/r/video/hot/1" class="tb">视频</a>              
-                <a href="/r/tec/hot/1" class="tb">挨踢1024</a>
-                <a href="/r/buy/hot/1" class="tb">相见恨晚</a>
-                <a href="/r/pub/hot/1" class="tb">公众场合不宜</a>    
-                -->
-                
+<div class="wrap">
+    <!-- header start -->
+    <div class="header_wrap">
+        <div class="header cc">
+            <!-- logo start -->
+            <div class="logo">
+                <a href="<?= yii::$app->getHomeUrl() ?>">
+                    <img src="http://pw.com/themes/site/default/images/logo.png" alt="金球迷网">
+                </a>
             </div>
-        <div class="key-sera">
-        
-                        <form id="searchFrm2" name="searchFrm2" method="post" action="/search/show">
-                            <input type="text" autocomplete="off" id="txtSearch2" name="words" class="search-txt-s">
-                            
-                            <a id="searchBtn_3" name="searchBtn_2" class="i" href="javascript:;"><span class="ico"></span></a>                              
-                            <input type="hidden" name="page" id="page" value="1">
-                        </form>         
-            
-        </div>  
-        <div class="action-nav">
-            
-            
-                
-                <a id="reg-link-a" class="login-btn-a" href="javascript:;">注册</a><a id="login-link-a" class="login-btn-a" href="javascript:;">登录</a>
-                                
-            
-                        
+            <!-- logo end -->
+            <!-- nav start -->
+            <div class="nav">
+                <ul>
+                    <li class="current"><a href="#">首页</a></li>
+                    <li><a href="#">西甲</a></li>
+                    <li><a href="#">英超</a></li>
+                    <li><a href="#">德甲</a></li>
+                    <li><a href="#">意甲</a></li>
+                    <li><a href="#">法甲</a></li>
+                    <li><a href="#">中超</a></li>
+                    <li><a href="#">NBA</a></li>
+                    <li><a href="#">CBA</a></li>
+                </ul>
+            </div>
+            <!-- nav end -->
+            <!-- nav search start -->
+            <!--
+            <div class="header_search">
+                <form method="post" action="">
+                    <input type="text" name="keyword" placeholder="输入关键词">
+                    <button type="submit"><span>搜索</span></button>
+                </form>
+            </div>
+            -->
+            <!-- nav search end -->
+            <div class="header_right">
+                <a href="#" rel="nofollow">登录</a>
+                <a href="#" rel="nofollow">注册</a>
+            </div>
         </div>
-
-        
-        
-        <!-- 保存当前登录用户destJid -->
-        <input type="hidden" value="" id="hidjid">
     </div>
+    <!-- header end -->
+    <div class="main_wrap">
+        <div class="main">
+            <div class="main_left">
+                <div class="main_left_nav"></div>
+                <div class="main_left_nav"></div>
+            </div>
+            <div class="main_right">
+            </div>
+        </div>
     </div>
+</div>
 <!--
 <script src="/js/site.js" type="text/javascript" >
 -->
