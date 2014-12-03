@@ -19,7 +19,7 @@
             <!-- logo start -->
             <div class="logo">
                 <a href="<?= yii::$app->getHomeUrl() ?>">
-                    <img src="http://pw.com/themes/site/default/images/logo.png" alt="金球迷网">
+                    <img src="http://www.phpwind.net/themes/site/default/images/logo.png" alt="金球迷网">
                 </a>
             </div>
             <!-- logo end -->
@@ -38,28 +38,26 @@
                 </ul>
             </div>
             <!-- nav end -->
-            <!-- nav search start -->
-            <!--
-            <div class="header_search">
-                <form method="post" action="">
-                    <input type="text" name="keyword" placeholder="输入关键词">
-                    <button type="submit"><span>搜索</span></button>
-                </form>
-            </div>
-            -->
-            <!-- nav search end -->
+            <!-- header right start -->
             <div class="header_right">
                 <a href="#" rel="nofollow">登录</a>
                 <a href="#" rel="nofollow">注册</a>
             </div>
+            <!-- header right end -->
         </div>
     </div>
     <!-- header end -->
     <div class="main_wrap">
-        <div class="main">
+        <div class="main cc">
             <div class="main_left">
-                <div class="main_left_nav"></div>
-                <div class="main_left_nav"></div>
+                <div class="main_left_nav">
+                    <ul>
+                        <li class="current"><a href="#">最热</a></li>
+                        <li><a href="#">最新</a></li>
+                    </ul>
+                    <div class="content_filter"></div>
+                </div>
+                <div class="main_left_box"></div>
             </div>
             <div class="main_right">
             </div>

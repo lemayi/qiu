@@ -265,6 +265,15 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
+    // set the login info
+    public function setLoginInfo()
+    {
+        $this->login_count = 1;
+        $this-> last_login_ip = 1;
+        $this->last_login_time  = time();
+        $this->save();
+    }
+
     // relation role table
     public function getRole()
     {
