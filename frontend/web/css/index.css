@@ -326,3 +326,35 @@ body {
     right: 0px;
     top: 0px;
 }
+
+
+/* footer */
+.footer-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    width: 1200px;
+}
+.footer {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.footer .links {
+    font-size: 14px;
+}
+.footer .links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+.footer .copy {
+    margin-top: 10px;
+}
+.footer .copy a {
+    display: inline-block;
+    margin-right: 10px;
+}

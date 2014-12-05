@@ -24,24 +24,25 @@
             </div>
             <!-- logo end -->
             <!-- nav start -->
-            <div class="nav">
-                <ul>
-                    <li class="current"><a href="#">首页</a></li>
-                    <li><a href="#">西甲</a></li>
-                    <li><a href="#">英超</a></li>
-                    <li><a href="#">德甲</a></li>
-                    <li><a href="#">意甲</a></li>
-                    <li><a href="#">法甲</a></li>
-                    <li><a href="#">中超</a></li>
-                    <li><a href="#">NBA</a></li>
-                    <li><a href="#">CBA</a></li>
-                </ul>
-            </div>
-            <!-- nav end -->
+            <ul class="nav cc">
+                <li class="current"><a href="#">首页</a></li>
+                <li><a href="#">西甲</a></li>
+                <li><a href="#">英超</a></li>
+                <li><a href="#">德甲</a></li>
+                <li><a href="#">意甲</a></li>
+                <li><a href="#">法甲</a></li>
+                <li><a href="#">中超</a></li>
+                <li><a href="#">NBA</a></li>
+                <li><a href="#">CBA</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">直播表</a></li>
+                <li><a href="#">比赛录像</a></li>
+            </ul>
+        <!-- nav end -->
             <!-- header right start -->
             <div class="header-right">
-                <a href="#" rel="nofollow">登录</a>
-                <a href="#" rel="nofollow">注册</a>
+                <a href="/site/login" rel="nofollow">登录</a>
+                <a href="/site/signup" rel="nofollow">注册</a>
             </div>
             <!-- header right end -->
         </div>
@@ -215,6 +216,29 @@
         </div>
     </div>
     <!-- center end -->
+    <!-- footer start -->
+    <div class="footer-wrap">
+        <div class="footer">
+            <div class="links">
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+                <a href="#">关于网站</a>
+            </div>
+            <div class="copy">
+                Copyright ©2014, All Rights Reserved. 宝中旅游·四川新东方国际旅行社
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
 </div>
 <!--
 <script src="/js/site.js" type="text/javascript" >
