@@ -156,14 +156,32 @@ body {
 }
 .header-right a {
     color: #fff;
-    margin: 0 0 0 10px;
+    margin-left:10px;
+}
+
+/* sub nav */
+.sub-nav {
+    display: block;
+    width: 100%;
+    z-index: 10;
+    margin-top: 10px;
+}
+.sub-nav .box {
+    width:1180px;
+    margin: 0 auto;
+    background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+.sub-nav a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
 }
 
 /* center */
 .main-wrap {
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
+    margin:0 auto;
     width: 1200px;
 }
 .main {
@@ -357,4 +375,106 @@ body {
 .footer .copy a {
     display: inline-block;
     margin-right: 10px;
+}
+
+/* register */
+.container {
+    width: 1200px;
+    border-radius: 4px;
+    margin: 20px auto 10px auto;
+    position: relative;
+}
+.container-left {
+    float: left;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-right: 380px;
+    padding:20px 50px;
+    width:720px;
+}
+.container-left h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #2e9f54;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+}
+.signup-form {
+    margin: 20px 0;
+    text-align: center;
+}
+.signup-form form {
+    font-size: 14px;
+}
+.signup-form .row {
+    margin: 40px 0;
+}
+.row label {
+    display: inline-block;
+    width:100px;
+    text-align: right;
+    font-size: 18px;
+    pointer: cursor;
+}
+.row input {
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #2e9f54;
+    padding: 4px 4px;
+    line-height: 30px;
+    height: 30px;
+    background-color: #fff;
+    vertical-align: middle;
+    margin: 0;
+}
+.row .error {
+    margin: 10px 0 0 255px;
+    color: #ff6a6a;
+    font-size: 14px;
+    text-align: left;
+    display: none;
+}
+.signup-form .buttons {
+    text-align: center;
+}
+.buttons a {
+    color: #fff;
+    font-size: 18px;
+    background-color: #2e9f54;
+    vertical-align: middle;
+    margin-right: 20px;
+    padding: 5px 20px;
+    border:none;
+    display: inline-block;
+}
+.container-right {
+    position: absolute;
+    float: right;
+    right: 0px;
+    top: 0px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    width: 360px;
+}
+.accout-box {
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    text-align: center;
+}
+.accout-box p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+.accout-box a{
+    display: block;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #fff;
+    background-color: #2e9f54;
+    vertical-align: middle;
+    padding: 5px 20px;
+    border:none;
+    width:80px;
 }

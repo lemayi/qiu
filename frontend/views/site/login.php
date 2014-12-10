@@ -1,32 +1,38 @@
 <?php
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
-
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = '会员登录';
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-                <?= $form->field($model, 'username') ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
+<div class="container cc">
+    <!-- center left start -->
+    <div class="container-left">
+        <h1>做一个有身份的金球迷</h1>
+        <div class="signup-form">
+            <form action="" method="post">
+                <div class="row">
+                    <label for="username">用户名：</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名">
+                    <div class="error">请输入6-15位用户名</div>
                 </div>
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                <div class="row">
+                    <label for="password">密码：</label>
+                    <input type="text" id="password" name="password" placeholder="请输入密码">
+                    <div class="error">请输入6-15位密码</div>
                 </div>
-            <?php ActiveForm::end(); ?>
+                <div class="buttons">
+                    <a href="#">登录</a>
+                    <a href="javascript:history.go(-1)">返回</a>
+                </div>
+            </form>
         </div>
     </div>
+    <!-- center left end -->
+    <!-- center right start -->
+    <div class="container-right">
+        <div class="accout-box">
+            <p><b>金球迷</b> - 为球迷服务！</p>
+            <p>还未注册？</p>
+            <p><a href="/site/signup">立即注册</a></p>
+        </div>
+    </div>
+    <!-- center right end -->
 </div>
