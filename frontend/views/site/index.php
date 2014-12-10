@@ -1,3 +1,8 @@
+<?php
+$this->title = '金球迷 - 为球迷服务！';
+$this->metaTags['keywords'] = '金球迷';
+$this->metaTags['desc'] = '金球迷';
+?>
 <div class="main-wrap">
     <div class="main cc">
         <!-- center left start -->

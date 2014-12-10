@@ -18,6 +18,8 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {    
+    public $keywords = '';
+    public $desc     = '';
     /**
      * @inheritdoc
      */
@@ -67,7 +69,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $this->keywords = '金球迷';
+        $this->desc = '金球迷';
+        return $this->render('index', [
+            'keywords' => $this->keywords,
+            'desc'     => $this->desc,
+        ]);
     }
 
     public function actionLogin()

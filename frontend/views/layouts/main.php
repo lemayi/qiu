@@ -7,8 +7,8 @@ use yii\helpers\Html;
     <meta charset="<?= Yii::$app->charset ?>"/>
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <meta name="keywords" content="首页" >
-    <meta name="description" content="首页" >
+    <meta name="keywords" content="<?= Html::encode($this->metaTags['keywords']) ?>" >
+    <meta name="description" content="<?= Html::encode($this->metaTags['desc']) ?>" >
     <link rel="icon" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
     <link rel="bookmark" href="<?= Yii::getAlias('@asset') ?>/logo.ico" type="image/x-icon">
